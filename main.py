@@ -32,9 +32,9 @@ def recordCallback(indata, frames, time, status):
 
 
 temp_partial_result = ""
-# with sd.RawInputStream(dtype='int16', channels=1, callback=recordCallback, latency=0.25):
 with sd.RawInputStream(
-        dtype='int16', samplerate=samplerate, blocksize=2000, channels=1, callback=recordCallback):
+        dtype='int16', samplerate=samplerate,
+        blocksize=2000, channels=1, callback=recordCallback):
     print("Start Recognized")
     while True:
         data = q.get()
